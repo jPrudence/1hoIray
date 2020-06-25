@@ -1,6 +1,6 @@
 <?php
 
-function isa( $isa_nbr, $dilatrin_n_ny_tapitrisa = false){
+function 1horay( $isa_nbr, $dilatrin_n_ny_tapitrisa = false){
 
 	$ahalava = strlen("$isa_nbr") - 1;
 	$fizarany = ( $ahalava <= 6 ? 1: $ahalava-5 );

@@ -1,6 +1,6 @@
 <?php
 
-function 1horay( $isa_nbr, $dilatrin_n_ny_tapitrisa = false){
+function isa1horay( $isa_nbr, $dilatrin_n_ny_tapitrisa = false){
 
 	$ahalava = strlen("$isa_nbr") - 1;
 	$fizarany = ( $ahalava <= 6 ? 1: $ahalava-5 );
@@ -18,17 +18,17 @@ function 1horay( $isa_nbr, $dilatrin_n_ny_tapitrisa = false){
 		if($isa_nbr % 10 == 0)
 			$isa_str = ["folo", "roapolo", "telopolo", "efapolo", "dimampolo", "enimpolo", "fitopolo", "valopolo", "sivifolo"][ ($isa_nbr / 10) - 1 ];
 		else
-			$isa_str = isa($isa_b) . ($isa_a == 1?" ambin'ny ":" amby ") . isa($isa_a*10);
+			$isa_str = isa1horay($isa_b) . ($isa_a == 1?" ambin'ny ":" amby ") . isa1horay($isa_a*10);
 	}
 	elseif($isa_nbr < 1000){
 		if($isa_nbr % 100 == 0)
 			$isa_str = ["zato", "roanjato", "telonjato", "efajato", "dimanjato", "eninjato", "fitonjato", "valonjato", "sivinjato"][ ($isa_nbr / 100) - 1 ];
 		else
-			$isa_str = isa($isa_b) . (( $isa_b%10==0 || $isa_b < 20 )?" amby ":" sy ") . isa($isa_a*100);
+			$isa_str = isa1horay($isa_b) . (( ($isa_b % 10==0 || $isa_b < 100) && $isa_nbr <= 200 )?" amby ":" sy ") . isa1horay($isa_a*100);
 	}
 	else{
 		if($isa_a == 1 && $isa_nbr < 10000)
-			$isa_str = ($isa_nbr != 1000?isa($isa_b) . " sy ":"") . "arivo";
+			$isa_str = ($isa_nbr != 1000?isa1horay($isa_b) . " sy ":"") . "arivo";
 		else{
 			$index = $ahalava >= 6 ?3:$ahalava-3;
 			if($dilatrin_n_ny_tapitrisa)
@@ -36,7 +36,7 @@ function 1horay( $isa_nbr, $dilatrin_n_ny_tapitrisa = false){
 
 			$isa_vaventy = ["arivo", "alina", "hetsy", "tapitrisa", "safatsiroa", "tsitamboisa", "alinkisa", "tsipesipesenina", "tsitokiforohana", "tsihitanoanoa"];
 
-			$isa_str =   isa($isa_b) . ( $isa_b === 0? " ": " sy " . isa( $isa_a) ) . " " . $isa_vaventy[$index];
+			$isa_str =   isa1horay($isa_b) . ( $isa_b === 0? " ": " sy " . isa1horay( $isa_a) ) . " " . $isa_vaventy[$index];
 		}
 	}
 

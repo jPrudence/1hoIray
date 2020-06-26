@@ -9,7 +9,7 @@ function isa1hoiray( $isa_nbr, $dilatrin_n_ny_tapitrisa = false){
 
 	$isa_str = "";
 
-	if($isa_nbr == 0 || !is_numeric($isa_nbr)){
+	if( ($isa_nbr == 0 || !is_numeric($isa_nbr))){
 		$isa_str = "aotra";
 	}
 	elseif($isa_nbr < 10)
@@ -18,7 +18,7 @@ function isa1hoiray( $isa_nbr, $dilatrin_n_ny_tapitrisa = false){
 		if($isa_nbr % 10 == 0)
 			$isa_str = ["folo", "roapolo", "telopolo", "efapolo", "dimampolo", "enimpolo", "fitopolo", "valopolo", "sivifolo"][ ($isa_nbr / 10) - 1 ];
 		else
-			$isa_str = isa1hoiray($isa_b) . ($isa_a == 1?" ambin'ny ":" amby ") . isa1hoiray($isa_a*10);
+			$isa_str = isa1hoiray($isa_b) . ($isa_a == 0?"":($isa_a == 1?" ambin'ny ":" amby ") . isa1hoiray($isa_a*10));
 	}
 	elseif($isa_nbr < 1000){
 		if($isa_nbr % 100 == 0)
@@ -36,11 +36,11 @@ function isa1hoiray( $isa_nbr, $dilatrin_n_ny_tapitrisa = false){
 
 			$isa_vaventy = ["arivo", "alina", "hetsy", "tapitrisa", "safatsiroa", "tsitamboisa", "alinkisa", "tsipesipesenina", "tsitokiforohana", "tsihitanoanoa"];
 
-			$isa_str =   isa1hoiray($isa_b) . ( $isa_b === 0? " ": " sy " . isa1hoiray( $isa_a) ) . " " . $isa_vaventy[$index];
+			$isa_str = ( $isa_b == 0? "": isa1hoiray($isa_b) . ($isa_a == 0?'':" sy " . isa1hoiray( $isa_a) . " " . $isa_vaventy[$index]) );
 		}
 	}
 
-	return str_replace(["tapitrisa tapitrisa", "iray amb", "aotra sy "], ["lavitrisa", "iraika amb", " "], $isa_str);
+	return str_replace(["tapitrisa tapitrisa", "iray amb" ], ["lavitrisa", "iraika amb"], $isa_str);
 }
 
 /*

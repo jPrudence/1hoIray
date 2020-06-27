@@ -6,5 +6,5 @@ isa manodidina ny "tapitrisa" no tafavoakan'ity code ity tsy misy diso ( raha ny
 
 http://1horay.epizy.com/
 
-# [Fomba fanisana vaovao](https://wordpress.com/support/markdown-quick-reference/?aff=13200) ( narenina )
+# [Fomba fanisana vaovao](http://1horay.epizy.com/?fanisana_vaovao=1) ( narenina )
 Misy famadihana amin'ny fomba fanisana vaovao ihany koa ato amin'[ity lien ity](http://1horay.epizy.com/?fanisana_vaovao=1) fa mbola tsy azo antoka ny fahamarinany
